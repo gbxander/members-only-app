@@ -402,3 +402,13 @@ input[type="password"] {
     background: linear-gradient(to right, #a1d3b0, #f6f1d3);
     min-height: 700px;
 }
+
+.posts-container h3 {
+    font-family: "Vujahday Script", "The Nautigal", "Island Moments", Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 35px;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 0px;
+}
+
