@@ -5,6 +5,10 @@ const mongoose = require('mongoose')
 
 const mongoDB = "mongodb+srv://gbxander:test1234@sailchimp.e6x8s.mongodb.net/sailchimp-db?retryWrites=true&w=majority"
 mongoose.connect(mongoDB, {useUnifiedTopology: true, useNewUrlParser: true})
+        .then(result => app.listen(port, (req, res) => {
+            console.log("listening on port: " + port)
+        }))
+        .catch(err => console.log(err))
 
 const app = express()
 
@@ -13,9 +17,6 @@ const port = 3000
 app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, 'views'))
 
-app.listen(port, (req, res) => {
-    console.log("listening on port: " + port)
-})
 
 app.use(logger('dev'))
 app.use(express.static(path.join(__dirname, 'public')))
