@@ -7,18 +7,27 @@
 
         <!-- Posts section -->
         <div class="posts-container">
-            <h1>Posts</h1>
+            <h3>Posts</h3>
             <% if (posts.length > 0) { %>
                 <% posts.forEach(post => { %>
                     <div class="post-card">
-                        <h3><%= post.title %></h3>
+                        <div class="post-header">
+                            <span>Title: <%= post.title %></span>
+                            <span>&#183;</span>
+                            <span>Posted by: <%= post.author %></span>
+                            <span>&#183;</span>
+                            <span><%= post.date %></span>
+                        </div>
                         <p><%= post.post %></p>
                     </div>
               <%  }) %>
             <% } else { %>
-                <div class="post-card">
-                    <p> No posts to display....</p>
-                    <p> Be the first to submit a new post!</p>
+                <div class="post-card empty">
+                    <div class="block-img" >
+                        <img src="http://localhost:3000/assets/images/empty.png" alt="chimp" width="90" height="90">
+                    </div>
+                    <h1> No posts to display....</h1>
+                    <h3> Be the first to submit a new post!</h3>
                 </div>
             <% } %> 
         </div>
