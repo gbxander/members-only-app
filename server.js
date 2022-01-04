@@ -1,6 +1,10 @@
 const express = require('express')
 const path = require('path')
 const logger = require('morgan')
+const mongoose = require('mongoose')
+
+const mongoDB = "mongodb+srv://gbxander:test1234@sailchimp.e6x8s.mongodb.net/sailchimp-db?retryWrites=true&w=majority"
+mongoose.connect(mongoDB, {useUnifiedTopology: true, useNewUrlParser: true})
 
 const app = express()
 
