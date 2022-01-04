@@ -403,7 +403,7 @@ input[type="password"] {
     min-height: 700px;
 }
 
-.posts-container h3 {
+.posts-container .title {
     font-family: "Vujahday Script", Arial, Helvetica, sans-serif;
     color: white;
     font-size: 35px;
