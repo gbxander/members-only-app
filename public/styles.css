@@ -85,6 +85,18 @@ form {
 }
 
 
+.btn-1:hover {
+    background-color: #6dadcf;
+    color: #fff;
+    border-color: #fff;
+}
+
+.btn-2:hover {
+    background-color: #fff;
+    color: #77a198;
+    border-color: #77a198;
+}
+
 
 
 /*
