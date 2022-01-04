@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+    <%- include("./layouts/head.ejs") %>
+    <body>
+        <!-- Header -->
+        <%- include("./layouts/nav.ejs") %>
+
+        <!-- Main Section -->
+        <section class="main-section style-01">
+            <div class="container">
+                <div class="block-img" >
+                    <img src="http://localhost:3000/assets/images/sailing-boat.png" alt="chimp" width="72" height="72">
+                </div>
+                <div class="text-block">
+                    <h1>What is Sailchimp?</h1>
+                    <div class="text">
+                        <p>
+                            Sailchimp is home to one of the most exclusive, authentic communities in the web. 
+                            Everyday, thousands of our clubmembers as well as non-clubmembers around the globe post their
+                            thoughts for all to read.
+                        </p>
+                    </div>
+                </div>
+                <a href="/sign-in"><button class="btn-defaults btn-1">Log-In</button></a>
+                <a href="/sign-up"><button class="btn-defaults btn-2">Sign-Up</button></a>
+            </div>
+        </section>
+        <section class="main-section style-02">
+            <div class="container">
+                <div class="block-img" >
+                    <a href="/posts">
+                        <img src="http://localhost:3000/assets/images/helm.png" alt="helm" width="72" height="72">
+                    </a>
+                </div>
+                <div class="text-block">
+                    <h1>How Sailchimp Works?</h1>
+                </div>
+                <div class="text-card-container">
+                    <div class="text-card">
+                        <div class="block-img" >
+                            <a href="/sign-up">
+                                <img src="http://localhost:3000/assets/images/support.png" alt="support" width="40" height="40">
+                            </a>
+                        </div>
+                        <h4>Join</h4>
+                        <div class="text">
+                            <span>
+                               Join the Sailchimp clubhouse to become a member of the community
+                               and gain access to clubhouse member priveleges. Secret passcode required!
+                            </span>
+                        </div>
+                    </div>
+                    <div class="text-card">
+                        <div class="block-img" >
+                            <a href="/posts">
+                                <img src="http://localhost:3000/assets/images/writing.png" alt="support" width="40" height="40">
+                            </a>
+                        </div>
+                        <h4>Post</h4>
+                        <div class="text">
+                            <span>
+                                Share you thoughts with the club. Only members inside the clubhouse, members can 
+                                see who the author of a post is.
+                            </span>
+                        </div>
+                    </div>
+                    <div class="text-card">
+                        <div class="block-img" >
+                            <a href="/posts">
+                                <img src="http://localhost:3000/assets/images/book.png" alt="support" width="40" height="40">
+                            </a>
+                        </div>
+                        <h4>Read</h4>
+                        <div class="text">
+                            <span>
+                                Read all posts shared by Sailchimp clubhouse members and non-members. 
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="main-section style-01">
+            <div class="container">
+                <div class="block-img" >
+                    <img src="http://localhost:3000/assets/images/chimpanzee-head.png" alt="chimp" width="72" height="72">
+                </div>
+                <div class="text-block">
+                    <h1>Sailchimp Founder</h1>
+                    <div class="text">
+                        <p>
+                            Sailchimp was founded in 2022 by Bonzo the sailing chimp, who was born in the coast of Africa.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <%- include("./layouts/footer.ejs") %> 
+    </body>
+</html>
