@@ -412,3 +412,20 @@ input[type="password"] {
     margin-bottom: 0px;
 }
 
+.post-card {
+    background-color: #fff;
+    width: 40%;
+    margin: 10px auto;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    padding: 20px;
+    border-radius: 10px;
+    
+}
+
+.post-header span {
+    margin: 0 4px;
+}
+
+.empty {
+    text-align: center;
+}
