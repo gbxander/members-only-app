@@ -392,3 +392,13 @@ input[type="password"] {
     background: url("./assets/images/ship-bottle.jpeg");
 }
 
+/*
+  ========================================
+  Posts Page
+  ========================================
+*/
+
+.posts-container {
+    background: linear-gradient(to right, #a1d3b0, #f6f1d3);
+    min-height: 700px;
+}
