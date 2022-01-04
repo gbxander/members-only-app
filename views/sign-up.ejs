@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+    <%- include('./layouts/head.ejs') %>
+    <body>
+        <!-- Header -->
+        <%- include('./layouts/nav.ejs') %> 
+
+        <!-- Main section -->
+        <div class="form-section-wrapper">
+            <!-- Form -->
+            <section class="form-section">
+                <div class="form-wrapper">
+                    <h1>Welcome to Sailchimp!</h1>
+                    <h3>Create an account or <a href="/sign-in">log in</a></h3>  
+                    
+                    <form action="#" method="post">
+                        <fieldset class="sign-up-group">
+                            <div class="sign-up-field">
+                                <label>
+                                    Email
+                                    <input name="email-address" type="email" required>
+                                </label>
+                            </div>
+                            <div class="sign-up-field">
+                                <label>
+                                    Username
+                                    <input name="user-name" type="text" required>
+                                </label>
+                            </div>
+                            <div class="sign-up-field">
+                                <label>
+                                    Password
+                                    <input name="password" type="password" required>
+                                </label>
+                            </div>
+                            <div class="sign-up-field">
+                                <label>
+                                    <input id="promotion" name="promotion" type="checkbox" value="accept promotion">
+                                        I don't want to recieve promotional emails from Sailchimp
+                                </label>
+                            </div>
+                            <p>By clicking the "Sign Up" button, you are creating a Sailchimp account, 
+                                and you agree to Sailchimp's <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>
+                            </p>
+                            <button name="submit">
+                                Sign-Up
+                            </button>
+                        </fieldset> 
+                    </form>
+                </div>
+            </section>
+
+            <!-- Img Pane -->
+            <section class="form-section-pane">
+            </section>
+        </div>
+
+        <!-- Footer -->
+        <%- include('./layouts/footer.ejs') %> 
+        
+    </body>
+</html>
