@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+    <%- include('./layouts/head.ejs') %>
+    <body>
+        <!-- Header -->
+        <%- include('./layouts/nav.ejs') %>
+
+        <!-- Posts section -->
+        <div class="posts-container">
+            <h1>Posts</h1>
+            <% if (posts.length > 0) { %>
+                <% posts.forEach(post => { %>
+                    <div class="post-card">
+                        <h3><%= post.title %></h3>
+                        <p><%= post.post %></p>
+                    </div>
+              <%  }) %>
+            <% } else { %>
+                <div class="post-card">
+                    <p> No posts to display....</p>
+                    <p> Be the first to submit a new post!</p>
+                </div>
+            <% } %> 
+        </div>
+
+        <!-- Footer -->
+        <%- include('./layouts/footer.ejs') %> 
+    </body>
+</html>
