@@ -26,7 +26,7 @@ const postSchema =  new Schema({
             default: 0
         }
     }
-}, { timestamps: { createdAt: 'created_at'} })
+}, { timestamps: true })
 
 const Post = mongoose.model('Post', postSchema)
 
