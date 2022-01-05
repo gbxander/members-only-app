@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 const express = require('express')
 const path = require('path')
 const logger = require('morgan')
@@ -8,8 +10,7 @@ const Post = require('./models/post')
 const port = 3000
 
 // connect to mongodb
-const mongoDB = "mongodb+srv://gbxander:test1234@sailchimp.e6x8s.mongodb.net/sailchimp-db?retryWrites=true&w=majority"
-mongoose.connect(mongoDB, {useUnifiedTopology: true, useNewUrlParser: true})
+mongoose.connect(process.env.DB_URI, {useUnifiedTopology: true, useNewUrlParser: true})
         .then(result => app.listen(port, (req, res) => {
             console.log("listening on port: " + port)
         }))
