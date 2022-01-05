@@ -7,6 +7,7 @@ const logger = require('morgan')
 const mongoose = require('mongoose')
 const passport = require('passport')
 const LocalStrategy = require('passport-local')
+const bcrypt = require('bcryptjs')
 const User = require('./models/user')
 const Post = require('./models/post')
 
@@ -37,8 +38,15 @@ passport.use(
         User.findOne({ username: username }, (err, user) => {
             if (err) return done(err)
             if (!user) return done(null, false, { message: 'Invalid username'})
-            if (!(user.password === password)) return done(null, false, { message: 'Invalid password'})
-            return done(null, user)
+            bcrypt.compare(password, user.password, (err, res) => {
+                if (res) {
+                  // passwords match! log user in
+                  return done(null, user)
+                } else {
+                  // passwords do not match!
+                  return done(null, false, { message: "Invalid password" })
+                }
+            })
         })
     })
 )
@@ -65,21 +73,24 @@ app.get('/sign-up', (req, res) => {
     res.render('sign-up', {title: 'Sign-up'})
 })
 
-app.post('/sign-up', (req, res) => {
+app.post('/sign-up', async (req, res) => {
     const { email, username, password, subscribed = "off" } = req.body
+    bcrypt.hash(password, 10).then((hashedPassword) => {
 
-    const user = new User({
-        email,
-        username,
-        password,
-        subscribed: subscribed === 'on' ? true : false
-    })
+        const user = new User({
+            email,
+            username,
+            password: hashedPassword,
+            subscribed: subscribed === 'on' ? true : false
+        })
 
-    user.save()
+        user.save()
         .then(doc => {
             res.redirect('/')
         })
         .catch(err => console.log(err))
+
+    }).catch(err => console.log(err))
 })
 
 app.get('/sign-in', (req, res) => {
