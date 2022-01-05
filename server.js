@@ -37,6 +37,23 @@ app.get('/sign-up', (req, res) => {
     res.render('sign-up', {title: 'Sign-up'})
 })
 
+app.post('/sign-up', (req, res) => {
+    const { email, username, password, subscribed = "off" } = req.body
+    
+    const user = new User({
+        email,
+        username,
+        password,
+        subscribed: subscribed === 'on' ? true : false
+    })
+
+    user.save()
+        .then(doc => {
+            res.redirect('/')
+        })
+        .catch(err => console.log(err))
+})
+
 app.get('/sign-in', (req, res) => {
     res.render('sign-in', {title: "Sign-in"})
 })
