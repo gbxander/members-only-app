@@ -1,9 +1,12 @@
 require('dotenv').config()
 
 const express = require('express')
+const session = require('express-session')
 const path = require('path')
 const logger = require('morgan')
 const mongoose = require('mongoose')
+const passport = require('passport')
+const LocalStrategy = require('passport-local')
 const User = require('./models/user')
 const Post = require('./models/post')
 
