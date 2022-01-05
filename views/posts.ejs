@@ -14,11 +14,11 @@
                         <div class="post-header">
                             <span>Title: <%= post.title %></span>
                             <span>&#183;</span>
-                            <span>Posted by: <%= post.author %></span>
+                            <span>Posted by: <%= post.author.name %></span>
                             <span>&#183;</span>
-                            <span><%= post.date %></span>
+                            <span><%= post.createdAt %></span>
                         </div>
-                        <p><%= post.post %></p>
+                        <p><%= post.body %></p>
                     </div>
               <%  }) %>
             <% } else { %>
