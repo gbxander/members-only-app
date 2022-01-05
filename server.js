@@ -124,6 +124,10 @@ app.get('/my-posts', (req, res) => {
     res.render('posts', {title: "My Posts", posts})
 })
 
+app.get('/join-club', (req, res) => {
+    res.render('join-club', {title: 'Join Club'})
+})
+
 
 // 404 error handler
 app.use((req, res) => {
