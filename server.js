@@ -93,6 +93,11 @@ app.post('/log-in',
     })
 )
 
+app.get('/log-out', (req, res) => {
+    req.logout()
+    res.redirect('/')
+})
+
 app.get('/posts', (req, res) => {
     Post.find()
         .then(posts => {
