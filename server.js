@@ -83,7 +83,7 @@ app.post('/sign-up', (req, res) => {
 })
 
 app.get('/sign-in', (req, res) => {
-    res.render('sign-in', {title: "Sign-in"})
+    res.render('sign-in', {title: "Sign-in", user: req.user})
 })
 
 app.post('/log-in',
