@@ -31,6 +31,31 @@ app.use(logger('dev'))
 app.use(express.static(path.join(__dirname, 'public')))
 app.use(express.urlencoded({extended: false}))
 
+// middleware for user authentication & session creation
+passport.use(
+    new LocalStrategy((username, password, done) => {
+        User.findOne({ username: username }, (err, user) => {
+            if (err) return done(err)
+            if (!user) return done(null, false, { message: 'Invalid username'})
+            if (!(user.password === password)) return done(null, false, { message: 'Invalid password'})
+            return done(null, user)
+        })
+    })
+)
+
+passport.serializeUser((user, done) => {
+    done(null, user.id)
+})
+
+passport.deserializeUser((id, done) => {
+    User.findById(id, (err, user) => {
+        done(err, user)
+    })
+})
+app.use(session({ secret: "chimps", resave: false}))
+app.use(passport.initialize())
+app.use(passport.session())
+
 // routes
 app.get('/', (req, res) => {
     res.render('home', {title: 'Home'})
