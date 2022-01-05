@@ -212,8 +212,8 @@ form {
 }
 
 .sign-up-group input[type="text"], 
-input[type="email"], 
-input[type="password"] {
+.sign-up-group input[type="email"], 
+.sign-up-group input[type="password"] {
 
     /* Box Model */
     display: block;
@@ -428,4 +428,68 @@ input[type="password"] {
 
 .empty {
     text-align: center;
+}
+
+
+/*
+  ========================================
+  Join Club Page
+  ========================================
+*/
+
+.join-section {
+    background-color: #fff;
+    min-height: 650px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.join-img {
+    border: 3px solid #e6e6e6;
+    text-align: center;
+    width: 275px;
+    padding: 20px;
+    margin: 0 auto;
+    border-radius: 50%;
+    background: linear-gradient(to right, #a1d3b0, #f6f1d3);
+}
+
+.join-section h1 {
+    font-size: 40px;
+}
+
+.join-section h3 {
+    font-size: 25px;
+}
+
+.join-section .form-wrapper {
+    text-align: center;
+}
+
+.join-input input[type="password"] {
+    /* Box Model */
+    margin: 5px 0 15px 0;
+    padding: 10px 5px;
+    width: 40%;
+    text-align: center;
+}
+
+.join-section button {
+        /* Box Model*/
+        margin: 10px;
+        padding: 7px 25px;
+        border: 0;
+        border-radius: 12px;
+        
+        /* Typography */
+        font-size: 20px;
+        color: #fff;
+    
+        /* Visual */
+        background: #007c89;
+}
+
+.join-section button:hover {
+    cursor: pointer;
 }
