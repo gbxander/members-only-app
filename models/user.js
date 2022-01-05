@@ -14,6 +14,10 @@ const userSchema = new Schema({
     password: {
         type: String,
         required: true
+    },
+    subscribed: {
+        type: Boolean,
+        required: true
     }
 }, { timestamps: true })
 
