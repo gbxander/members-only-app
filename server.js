@@ -26,6 +26,7 @@ app.set('views', path.join(__dirname, 'views'))
 // middleware & static files
 app.use(logger('dev'))
 app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.urlencoded({extended: false}))
 
 // routes
 app.get('/', (req, res) => {
