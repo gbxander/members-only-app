@@ -86,6 +86,13 @@ app.get('/sign-in', (req, res) => {
     res.render('sign-in', {title: "Sign-in"})
 })
 
+app.post('/log-in',
+    passport.authenticate('local', {
+        successRedirect: '/',
+        failureRedirect: '/fail'
+    })
+)
+
 app.get('/posts', (req, res) => {
     Post.find()
         .then(posts => {
