@@ -41,8 +41,13 @@ app.get('/sign-in', (req, res) => {
 })
 
 app.get('/posts', (req, res) => {
-    const posts = []
-    res.render('posts', {title: "All Posts", posts})
+    Post.find()
+        .then(posts => {
+            res.render('posts', {title: "All Posts", posts})
+        })
+        .catch(err => {
+            console.log(err)
+        })
 })
 
 app.get('/my-posts', (req, res) => {
