@@ -39,7 +39,7 @@ app.get('/sign-up', (req, res) => {
 
 app.post('/sign-up', (req, res) => {
     const { email, username, password, subscribed = "off" } = req.body
-    
+
     const user = new User({
         email,
         username,
@@ -69,7 +69,7 @@ app.get('/posts', (req, res) => {
 })
 
 app.get('/my-posts', (req, res) => {
-    const posts = []
+    /** @todo fetch user's posts */
     res.render('posts', {title: "My Posts", posts})
 })
 
