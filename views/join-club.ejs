@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+    <%- include('./layouts/head.ejs') %>
+    <body>
+        <!-- Header -->
+        <%- include('./layouts/nav.ejs') %> 
+        
+        <!-- Main section -->
+        <section class="join-section">
+                <div class="form-wrapper">
+                    <h1>Want to join the club?</h1>
+                    <div class="join-img">
+                        <img src="http://localhost:3000/assets/images/chimpanzee-head.png" width="200" height="200">
+                    </div>
+                    
+                    <form action="/join-club" method="post">
+                            <h3> Enter the secret password: </h1>
+                            <div class="join-input">
+                                <input name="password" type="password" required>
+                            </div>
+                            <button name="submit">
+                                Join
+                            </button>
+                    </form>
+                </div>
+            </section>
+        </section>
+
+        <!-- Footer -->
+        <%- include('./layouts/footer.ejs') %> 
+        
+    </body>
+</html>
