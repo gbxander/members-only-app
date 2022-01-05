@@ -2,7 +2,8 @@ const express = require('express')
 const path = require('path')
 const logger = require('morgan')
 const mongoose = require('mongoose')
-
+const User = require('./models/user')
+const Post = require('./models/post')
 
 const port = 3000
 
