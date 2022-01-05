@@ -7,8 +7,14 @@ const postSchema =  new Schema({
         required: true
     },
     author: {
-        type: String,
-        required: true
+        id: {
+            type: String,
+            required: true
+        },
+        name: {
+            type: String,
+            required: true
+        }
     },
     body: {
         type: String,
