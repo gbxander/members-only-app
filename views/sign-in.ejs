@@ -6,11 +6,6 @@
         <%- include('./layouts/nav.ejs') %> 
         
         <!-- Main section -->
-        <% if (user) { %>
-            <!-- @todo update layout for logged in status -->
-            <h1> Welcome Back <%= user.username %> </h1>
-            <a href="/log-out"><button>LOG OUT</button></a>
-        <% } else { %> 
         <div class="form-section-wrapper">
             <!-- Form -->
             <section class="form-section">
@@ -39,7 +34,6 @@
                     </form>
                 </div>
             </section>
-            <% } %> 
             <!-- Img Pane -->
             <section class="form-section-pane">
             </section>
