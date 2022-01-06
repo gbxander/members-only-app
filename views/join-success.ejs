@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+    <%- include('./layouts/head.ejs') %>
+    <body>
+        <!-- Header -->
+        <%- include('./layouts/nav.ejs') %> 
+        
+        <!-- Main section -->
+        <section class="join-section">
+                <div class="form-wrapper">
+                    <h1>Congratulations <%= user.username %> !</h1>
+                    <h2>You are now an official member of the Sailchimp Club</h2>
+                    <div class="join-img">
+                        <img src="http://localhost:3000/assets/images/support.png" width="200" height="200">
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- Footer -->
+        <%- include('./layouts/footer.ejs') %> 
+        
+    </body>
+</html>
