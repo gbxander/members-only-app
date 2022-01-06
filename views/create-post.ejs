@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+    <%- include('./layouts/head.ejs') %>
+    <body>
+        <!-- Header -->
+        <%- include('./layouts/nav.ejs') %> 
+        
+        <!-- Main section -->
+        <div class="form-section-wrapper">
+            <!-- Form -->
+            <section class="form-section">
+                <div class="form-wrapper">
+                    <h1>Share your thoughts</h1>
+                    <form action="/create-post" method="post">
+                        <fieldset class="post-group">
+                            <label for="title">Title:</label>
+                            <div class="post-field"> 
+                                <input name="title" type="text" required>
+                            </div>
+                            <label for="body">Body:</label>
+                            <div class="post-field">
+                                <textarea name="body" type="text" rows="10" cols="60" placeholder="Write a post" required> </textarea>
+                            </div>
+                            <button name="submit">
+                                Submit
+                            </button>
+                        </fieldset> 
+                    </form>
+                </div>
+            </section>
+            <!-- Img Pane -->
+            <section class="form-section-pane">
+            </section>
+        </div>
+
+        <!-- Footer -->
+        <%- include('./layouts/footer.ejs') %> 
+        
+    </body>
+</html>
