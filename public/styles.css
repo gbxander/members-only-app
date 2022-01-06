@@ -493,3 +493,13 @@ form {
 .join-section button:hover {
     cursor: pointer;
 }
+
+/*
+  ========================================
+  Create Post Page
+  ========================================
+*/
+
+.create-wrapper {
+    text-align: center;
+}
