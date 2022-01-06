@@ -147,7 +147,7 @@ app.get('/my-posts', (req, res) => {
     if (!req.user) res.status(400).send('Bad Request')
     Post.find({'author.id': req.user._id.toString()})
         .then(posts => {
-            res.render('posts', {title: "My Posts", posts, user: req.user})
+            res.render('dashboard', {title: "Dashboard", posts, user: req.user})
         })
         .catch(err => {
             console.log(err)
