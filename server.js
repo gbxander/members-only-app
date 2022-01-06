@@ -109,6 +109,30 @@ app.get('/log-out', (req, res) => {
     res.redirect('/')
 })
 
+app.get('/create-post', (req, res) => {
+    if (!req.user) res.status(400).send('Bad Request')
+    res.render('create-post', {title: 'Write Post', user: req.user})
+})
+
+app.post('/create-post', (req, res) => {
+    if (!req.user) res.status(400).send('Bad Request')
+
+    const {title, body} = req.body
+    const {_id, username} = req.user
+    const post = new Post({
+        title,
+        body,
+        author: {
+            username,
+            id: _id
+        }
+    })
+
+    post.save()
+        .then(result => res.redirect('/posts'))
+        .catch(err => console.log(err))
+})
+
 app.get('/posts', (req, res) => {
     Post.find()
         .then(posts => {
