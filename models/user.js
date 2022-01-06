@@ -18,6 +18,10 @@ const userSchema = new Schema({
     subscribed: {
         type: Boolean,
         required: true
+    },
+    isMember: {
+        type: Boolean,
+        default: false
     }
 }, { timestamps: true })
 
