@@ -112,7 +112,7 @@ app.get('/log-out', (req, res) => {
 app.get('/posts', (req, res) => {
     Post.find()
         .then(posts => {
-            res.render('posts', {title: "All Posts", posts, user: req.user})
+            res.render('posts', {title: "All Posts", user: req.user})
         })
         .catch(err => {
             console.log(err)
