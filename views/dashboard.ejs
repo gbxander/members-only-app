@@ -20,7 +20,7 @@
                             <span>&#183;</span>
                             <span>Posted by: <%= post.author.username %></span>
                             <span>&#183;</span>
-                            <span><%= post.createdAt %></span>
+                            <span><%= formatPostDate(post.createdAt) %></span>
                         </div>
                         <p><%= post.body %></p>
                     </div>
