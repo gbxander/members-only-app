@@ -145,8 +145,13 @@ app.get('/posts', (req, res) => {
 
 app.get('/my-posts', (req, res) => {
     if (!req.user) res.status(400).send('Bad Request')
-    /** @todo fetch user's posts */
-    res.render('posts', {title: "My Posts", user: req.user})
+    Post.find({'author.id': req.user._id.toString()})
+        .then(posts => {
+            res.render('posts', {title: "My Posts", posts, user: req.user})
+        })
+        .catch(err => {
+            console.log(err)
+        })
 })
 
 app.get('/join-club', (req, res) => {
