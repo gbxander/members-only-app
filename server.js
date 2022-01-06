@@ -66,11 +66,11 @@ app.use(passport.session())
 
 // routes
 app.get('/', (req, res) => {
-    res.render('home', {title: 'Home'})
+    res.render('home', {title: 'Home', user: req.user})
 })
 
 app.get('/sign-up', (req, res) => {
-    res.render('sign-up', {title: 'Sign-up'})
+    res.render('sign-up', {title: 'Sign-up', user: req.user})
 })
 
 app.post('/sign-up', async (req, res) => {
@@ -112,7 +112,7 @@ app.get('/log-out', (req, res) => {
 app.get('/posts', (req, res) => {
     Post.find()
         .then(posts => {
-            res.render('posts', {title: "All Posts", posts})
+            res.render('posts', {title: "All Posts", posts, user: req.user})
         })
         .catch(err => {
             console.log(err)
@@ -121,11 +121,11 @@ app.get('/posts', (req, res) => {
 
 app.get('/my-posts', (req, res) => {
     /** @todo fetch user's posts */
-    res.render('posts', {title: "My Posts", posts})
+    res.render('posts', {title: "My Posts", posts, user: req.user})
 })
 
 app.get('/join-club', (req, res) => {
-    res.render('join-club', {title: 'Join Club'})
+    res.render('join-club', {title: 'Join Club', user: req.user})
 })
 
 
