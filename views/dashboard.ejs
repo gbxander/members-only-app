@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+    <%- include('./layouts/head.ejs') %>
+    <body>
+        <!-- Header -->
+        <%- include('./layouts/nav.ejs') %>
+
+        <!-- Posts section -->
+        <div class="posts-container">
+            <div class="create-wrapper">
+                <h3 class="title">Create a new post</h3>
+                <a href="/create-post" ><img src="http://localhost:3000/assets/images/create.png" width="45" height="45"></a>
+            </div>
+            <h3 class="title">Your Posts</h3>
+            <% if (posts.length > 0) { %>
+                <% posts.forEach(post => { %>
+                    <div class="post-card">
+                        <div class="post-header">
+                            <span>Title: <%= post.title %></span>
+                            <span>&#183;</span>
+                            <span>Posted by: <%= post.author.username %></span>
+                            <span>&#183;</span>
+                            <span><%= post.createdAt %></span>
+                        </div>
+                        <p><%= post.body %></p>
+                    </div>
+              <%  }) %>
+            <% } else { %>
+                <div class="post-card empty">
+                    <div class="block-img" >
+                        <img src="http://localhost:3000/assets/images/empty.png" alt="chimp" width="90" height="90">
+                    </div>
+                    <h1> No posts to display....</h1>
+                    <h3> Be the first to submit a new post!</h3>
+                </div>
+            <% } %> 
+        </div>
+
+        <!-- Footer -->
+        <%- include('./layouts/footer.ejs') %> 
+    </body>
+</html>
