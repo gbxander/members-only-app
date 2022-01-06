@@ -143,7 +143,7 @@ app.get('/posts', (req, res) => {
         })
 })
 
-app.get('/my-posts', (req, res) => {
+app.get('/dashboard', (req, res) => {
     if (!req.user) res.status(400).send('Bad Request')
     Post.find({'author.id': req.user._id.toString()})
         .then(posts => {
