@@ -122,7 +122,7 @@ app.get('/posts', (req, res) => {
 app.get('/my-posts', (req, res) => {
     if (!req.user) res.status(400).send('Bad Request')
     /** @todo fetch user's posts */
-    res.render('posts', {title: "My Posts", posts, user: req.user})
+    res.render('posts', {title: "My Posts", user: req.user})
 })
 
 app.get('/join-club', (req, res) => {
