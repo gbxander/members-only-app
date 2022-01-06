@@ -22,6 +22,10 @@ const userSchema = new Schema({
     isMember: {
         type: Boolean,
         default: false
+    },
+    isAdmin: {
+        type: Boolean,
+        default: false
     }
 }, { timestamps: true })
 
