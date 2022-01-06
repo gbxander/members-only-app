@@ -135,6 +135,7 @@ app.post('/create-post', (req, res) => {
 
 app.get('/posts', (req, res) => {
     Post.find()
+        .sort({createdAt: 'desc'})
         .then(posts => {
             res.render('posts', {title: "All Posts", posts, user: req.user})
         })
