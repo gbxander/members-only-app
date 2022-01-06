@@ -7,6 +7,7 @@ const logger = require('morgan')
 const mongoose = require('mongoose')
 const passport = require('passport')
 const LocalStrategy = require('passport-local')
+const { formatPostDate } = require('./utils/utils')
 const bcrypt = require('bcryptjs')
 const User = require('./models/user')
 const Post = require('./models/post')
@@ -137,7 +138,7 @@ app.get('/posts', (req, res) => {
     Post.find()
         .sort({createdAt: 'desc'})
         .then(posts => {
-            res.render('posts', {title: "All Posts", posts, user: req.user})
+            res.render('posts', {title: "All Posts", posts, user: req.user, formatPostDate})
         })
         .catch(err => {
             console.log(err)
@@ -148,7 +149,7 @@ app.get('/dashboard', (req, res) => {
     if (!req.user) res.status(400).send('Bad Request')
     Post.find({'author.id': req.user._id.toString()})
         .then(posts => {
-            res.render('dashboard', {title: "Dashboard", posts, user: req.user})
+            res.render('dashboard', {title: "Dashboard", posts, user: req.user, formatPostDate})
         })
         .catch(err => {
             console.log(err)
