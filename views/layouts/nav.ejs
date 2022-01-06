@@ -2,8 +2,15 @@
     <h1 class="logo">
         Sailchimp
     </h1>
-
+    
     <nav class="nav-bar">
+        <% if (user) { %> 
+            <span> <%= user.username %> </span>
+        <% } %> 
+        <% if (user && !user.isMember) { %>
+            <span> | </span>
+            <a href="/join-club">Join Club</a>
+        <% } %> 
         <ul>
             <li><a href="/">Home</a></li>
             <li><a href="/posts">Posts</a></li>
