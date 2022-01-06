@@ -21,7 +21,17 @@
                         </p>
                     </div>
                 </div>
-                <a href="/sign-in"><button class="btn-defaults btn-1">Log-In</button></a>
+                <a href="/sign-in">
+                        <% if (user) { %>
+                            <button class="btn-defaults btn-1 btn-inactive" disabled>
+                                Logged-In
+                            </button>
+                        <% } else { %> 
+                        <button class="btn-defaults btn-1">
+                            Log-In
+                        </button>
+                        <% } %> 
+                </a>
                 <a href="/sign-up"><button class="btn-defaults btn-2">Sign-Up</button></a>
             </div>
         </section>
