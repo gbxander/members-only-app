@@ -4,13 +4,15 @@
     </h1>
     
     <nav class="nav-bar">
-        <% if (user) { %> 
-            <span> <%= user.username %> </span>
-        <% } %> 
-        <% if (user && !user.isMember) { %>
-            <span> | </span>
-            <a href="/join-club">Join Club</a>
-        <% } %> 
+        <div class="account-container">
+            <% if (user) { %>
+                <span> <%= user.username %> </span>
+            <% } %>
+            <% if (user && !user.isMember) { %>
+                <span> | </span>
+                <span><a href="/join-club">Join Club</a></span>
+            <% } %>
+        </div>
         <ul>
             <li><a href="/">About</a></li>
             <li><a href="/posts">Posts</a></li>

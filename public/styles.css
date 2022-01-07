@@ -139,6 +139,9 @@ form {
   ========================================
 */
 .nav-bar {
+    /* Box-model */
+    margin-top: 15px;
+
     /* Typography */
     text-align: right;
     text-transform: uppercase;
@@ -173,6 +176,14 @@ form {
     text-decoration: underline;
 }
 
+.account-container {
+    margin-left: 10px;
+    float: left
+}
+
+.account-container span {
+    margin: 0 3px;
+}
 
 /*
   ========================================
