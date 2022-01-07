@@ -14,7 +14,15 @@
                         <div class="post-header">
                             <span>Title: <%= post.title %></span>
                             <span>&#183;</span>
-                            <span>Posted by: <%= post.author.username %></span>
+                            <span>
+                                Posted by:
+                                <!-- Only show author of posts to club members and in posts beloning to user -->
+                                <% if (user && (user.isMember || post.author.id === user._id.toString())) { %> 
+                                    <%= post.author.username %>
+                                <% } else { %>
+                                    Anonymous
+                                <% } %>  
+                            </span>
                             <span>&#183;</span>
                             <span><%= formatPostDate(post.createdAt) %></span>
                         </div>
