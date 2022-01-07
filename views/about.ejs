@@ -32,7 +32,17 @@
                         </button>
                         <% } %> 
                 </a>
-                <a href="/sign-up"><button class="btn-defaults btn-2">Sign-Up</button></a>
+                <a href="/sign-up">
+                    <% if (user) { %>
+                        <button class="btn-defaults btn-2 btn-inactive" disabled>
+                            Sign-Up
+                        </button>
+                    <% } else { %> 
+                        <button class="btn-defaults btn-2">
+                            Sign-Up
+                        </button>
+                    <% } %>
+                </a>
             </div>
         </section>
         <section class="main-section style-02">
