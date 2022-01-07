@@ -1,5 +1,3 @@
-require('dotenv').config()
-
 const express = require('express')
 const session = require('express-session')
 const path = require('path')
@@ -13,6 +11,8 @@ const User = require('./models/user')
 const Post = require('./models/post')
 
 const port = 3000
+
+require('dotenv').config()
 
 // connect to mongodb
 mongoose.connect(process.env.DB_URI, {useUnifiedTopology: true, useNewUrlParser: true})
