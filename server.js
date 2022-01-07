@@ -161,6 +161,20 @@ app.get('/join-club', (req, res) => {
     res.render('join-club', {title: 'Join Club', user: req.user})
 })
 
+app.post('/join-club', (req, res) => {
+    if (!req.user) res.status(400).send('Bad Request')
+    if (req.body.password === process.env.CLUB_SECRET) {
+        User.findById(req.user._id)
+            .update({isMember: true})
+            .then(() => {
+                res.render('join-success', {title: 'Join Club', user: req.user})
+            })
+            .catch(err => console.log(err))
+    } else {
+        res.render('join-fail', {title: 'Join Club', user: req.user})
+    }
+    
+})
 
 // 404 error handler
 app.use((req, res) => {
