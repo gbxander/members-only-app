@@ -8,9 +8,13 @@
             <% if (user) { %>
                 <span> <%= user.username %> </span>
             <% } %>
-            <% if (user && !user.isMember) { %>
+            <% if (user) { %>
                 <span> | </span>
-                <span><a href="/join-club">Join Club</a></span>
+                <% if (!user.isMember) { %>
+                    <span><a href="/join-club">Join Club</a></span>
+                <% } else { %>
+                    <span> Member </span>
+                <% } %> 
             <% } %>
         </div>
         <ul>
