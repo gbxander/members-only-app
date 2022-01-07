@@ -67,7 +67,7 @@ app.use(passport.session())
 
 // routes
 app.get('/', (req, res) => {
-    res.render('home', {title: 'Home', user: req.user})
+    res.render('about', {title: 'About', user: req.user})
 })
 
 app.get('/sign-up', (req, res) => {
